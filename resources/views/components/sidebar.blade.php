@@ -20,27 +20,41 @@
                 </li>
                 @hasrole('admin')
                 <li class="menu-header">Main Menu</li>
-                <li class="{{ Route::is('destinations') ? 'active' : '' }}">
+                <li class="{{ Route::is('destinations*') ? 'active' : '' }}">
                     <a href="{{ route('destinations.index') }}">
                         <i class="fas fa-map"></i>
                         <span>Destination</span>
                     </a>
                 </li>
 
-                <li class="{{ Route::is('categories') ? 'active' : '' }}">
+                <li class="{{ Route::is('categories*') ? 'active' : '' }}">
                     <a href="{{ route('categories.index') }}">
                         <i class="fas fa-cubes"></i>
                         <span>Category</span>
                     </a>
                 </li>
 
-                <li class="{{ Route::is('beritas') ? 'active' : '' }}">
+                <li class="{{ Route::is('beritas*') ? 'active' : '' }}">
                     <a href="{{ route('beritas.index') }}">
                         <i class="fas fa-book"></i>
                         <span>Berita</span>
                     </a>
                 </li>
+
+                <li class="{{ Route::is('galleries*') ? 'active' : '' }}">
+                    <a href="{{ route('galleries.index') }}">
+                        <i class="fas fa-image"></i>
+                        <span>Gallery</span>
+                    </a>
+                </li>
                 @endhasrole
+
+                <li class="{{ Route::is('reviews*') ? 'active' : '' }}">
+                    <a href="{{ route('reviews.index') }}">
+                        <i class="fas fa-star"></i>
+                        <span>Review</span>
+                    </a>
+                </li>
 
                 <li class="menu-header">Setting</li>
                 <li class="{{ Route::is('profile') ? 'active' : '' }}">

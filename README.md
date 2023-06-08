@@ -1,24 +1,14 @@
-<img style="width: 100%; max-width: 100%;" alt="filament-shield-art" src="https://banners.beyondco.de/Laravel%20Stisla%20Fortify.png?theme=light&packageManager=&packageName=&pattern=architect&style=style_1&description=Start+your+laravel+project+with+FORTIFY+auth+and+STISLA+template&md=1&showWatermark=1&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg" >
+## Requirements
 
-# Laravel + Stisla + FortifyUI
-
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/fukigenmedia/laravel-stisla/pulls)
-
-We were inspired by one of the [@nyancodeid](https://github.com/nyancodeid) repositories, [Laravel 8 + Stisla + Jetstream + Livewire](https://github.com/nyancodeid/laravel-8-stisla-jetstream).
-
-Laravel Jetstream is excellent, equipped with livewire or inertiaJS. But not all developers know how to use it, that's why we wanted to revive the old way.
-
-## What Inside?
-
-- Laravel ^8.x - [Laravel Docs](https://laravel.com/docs/8.x/)
-- FortifyUI ^1.3 - [FortifyUI](https://github.com/zacksmash/fortify-ui)
-- Stisla Admin Template ^2.2.0 - [Stisla](https://getstisla.com/)
+- PHP >= 7.4
+- Composer
+- MySQL
 
 ## How To Use This?
 
 Download or clone this repo
 ```shell
-$ git clone https://github.com/fukigenmedia/laravel-stisla.git
+$ git clone https://github.com/arstt/space-time.git
 ```
 
 Install all dependency required by laravel.
@@ -37,15 +27,3 @@ $ php artisan key:generate
 # run migration
 $ php artisan migrate
 ```
-
-## Screenshot
-<p align="center">
-    <img src="https://telegra.ph/file/c094b2c2de3c4ac93f978.png" width="80%" height="auto" />
-    <img src="https://telegra.ph/file/70fb085cc7cc7754e54b0.png" width="80%" height="auto" />
-    <img src="https://telegra.ph/file/d4436063826b48fab5376.png" width="80%" height="auto" />
-</p>
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.

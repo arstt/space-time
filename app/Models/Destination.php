@@ -17,4 +17,9 @@ class Destination extends Model
         'address',
         'image'
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }
