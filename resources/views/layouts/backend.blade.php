@@ -32,6 +32,9 @@
     </div>
   </div>
 
+  {{-- modal --}}
+  @yield('modal')
+
   <!-- General JS Scripts -->
   <script src="{{ asset('stisla/modules/jquery.min.js') }}"></script>
   <script src="{{ asset('stisla/modules/popper.js') }}"></script>

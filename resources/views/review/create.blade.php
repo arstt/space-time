@@ -2,6 +2,10 @@
 
 @section('title', 'Review')
 
+{{-- @section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/css/bootstrap-modal.css">
+@endsection --}}
+
 @section('content')
 <div class="card">
 
@@ -46,10 +50,9 @@
                         <td>{{$destination->latitude}}</td>
                         <td>{{$destination->longitude}}</td>
                         <td>
-                            {{-- button add review show pop u --}}
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reviewModal" data-Destination="{{$destination->id}}">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-destination="{{$destination->id}}">
                                 Add Review
-                            </button>
+                              </button>
                         </td>
                     </tr>
                 @endforeach
@@ -57,29 +60,67 @@
             </table>
           </div>
     </div>
+</div>
 
-    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+@endsection
+
+@section('modal')
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="reviewModalLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <form action="{{ route('reviews.create') }}" method="POST" enctype="multipart/form-data">
             <div class="modal-body">
-              <!-- Add your form here -->
+                    @csrf
+                    <input type="hidden" name="destination_id" id="DestinationId">
+                    <div class="form-group">
+                        <label>Review Title</label>
+                        <input name="name" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <input name="rating" type="number" class="form-control" max="5" min="1" placeholder="1 s/d 5" >
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea name="review" class="form-control"></textarea>
+                    </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="modal-footer bg-whitesmoke br">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add Review</button>
             </div>
-          </div>
+        </form>
         </div>
-      </div>
-
-
+    </div>
 </div>
 @endsection
 
 @section('js')
+
+<!-- Include jQuery -->
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+
+<!-- Include Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#exampleModal').on('show.bs.modal', function(e) {
+            var button = $(e.relatedTarget); // Button that triggered the modal
+            var destination = button.data('destination'); // Extract info from data-* attributes
+
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this);
+            modal.find('#DestinationId').val(destination);
+        });
+    });
+</script>
 
 @endsection

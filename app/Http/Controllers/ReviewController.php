@@ -44,7 +44,6 @@ class ReviewController extends Controller
     {
         $validate = Validator::make(request()->all(), [
             'destination_id' => 'required',
-            'user_id' => 'required',
             'name' => 'required',
             'review' => 'required',
             'rating' => 'required',
