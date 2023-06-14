@@ -24,6 +24,7 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/destination', [HomeController::class, 'destination'])->name('destination');
+Route::get('/destination/{id}', [DestinationController::class, 'destinationDetails'])->name('destination.detail');
 Route::get('/berita', [HomeController::class, 'berita'])->name('berita');
 
 

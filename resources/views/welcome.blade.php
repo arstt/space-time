@@ -56,7 +56,9 @@
                             <img src="{{asset('storage/'.$destination->image)}}" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">{{ $destination->name }} </p>
+                            <a href="{{route('destination.detail', $destination->id)}}">
+                                <p class="d-flex align-items-center">{{ $destination->name }} </p>
+                            </a>
                         </div>
                     </div>
                 </div>

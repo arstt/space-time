@@ -158,4 +158,11 @@ class DestinationController extends Controller
 
         return redirect()->route('destinations.index')->with('success', 'Destination deleted successfully.');
     }
+
+    public function destinationDetails($id)
+    {
+        $destination = Destination::findOrFail($id);
+
+        return view('details', compact('destination'));
+    }
 }
