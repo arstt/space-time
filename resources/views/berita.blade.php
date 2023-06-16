@@ -22,7 +22,7 @@
                         <div class="date">
                             <span>{{ $beritas->created_at }}</span>
                         </div>
-                        <a href="#">
+                        <a href="{{ route('destination.detail', $beritas->id)}}">
                             <h3>{{ $beritas->title }}</h3>
                         </a>
                     </div>
