@@ -26,6 +26,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/destination', [HomeController::class, 'destination'])->name('destination');
 Route::get('/destination/{id}', [DestinationController::class, 'destinationDetails'])->name('destination.detail');
 Route::get('/berita', [HomeController::class, 'berita'])->name('berita');
+Route::get('/berita/{id}', [BeritaController::class, 'beritaDetails'])->name('berita.detail');
 
 
 Route::group(['middleware' => ['auth']], function() {

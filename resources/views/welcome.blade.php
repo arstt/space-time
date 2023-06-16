@@ -125,7 +125,7 @@
                         <div class="date">
                             <span>{{ $beritas->created_at }}</span>
                         </div>
-                        <a href="#">
+                        <a href="{{route('berita.detail', $berita->id)}}">
                             <h3>{{ $beritas->title }}</h3>
                         </a>
                     </div>

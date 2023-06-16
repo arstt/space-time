@@ -164,4 +164,12 @@ class BeritaController extends Controller
 
             return redirect()->route('beritas.index')->with('success', 'Berita berhasil dihapus');
     }
+
+    public function detailBerita($id)
+    {
+        $berita = Berita::findOrFail($id);
+        $categories = Category::all();
+
+        return view('berita-details', compact('berita', 'categories'));
+    }
 }
